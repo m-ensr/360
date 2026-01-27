@@ -1,0 +1,78 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block content %}
+
+<div class="grid grid-cols-2 lg:grid-cols-12 gap-3.5 items-stretch">
+    <div class="col-span-2 md:col-span-1 lg:col-span-4 flex">
+        <a class="flex-1" href="{% url 'product_home' %}">
+            <div class="card group cursor-pointer hover:shadow-sm transition-shadow h-full">
+                <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-500 h-full">
+                    <div class="flex justify-center p-2.5 bg-gray-50 dark:bg-gray-800">
+                        <span class="text-sm font-semibold group-hover:text-blue-500">
+                            Ürün ve Kampanya Yönetimi
+                        </span>
+                    </div>
+
+                    <div class="flex flex-1 p-2.5">
+                        <span class="text-sm font-normal">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Aut debitis, harum sapiente, ut aliquam molestiae.
+                        </span>
+                    </div>
+
+                    <div class="mt-auto flex justify-between items-center p-2.5 bg-gray-100 dark:bg-gray-700">
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <iconify-icon icon="fa:code-fork" class="dark:text-gray-300 text-gray-500"></iconify-icon>
+                            <span class="text-gray-900 dark:text-gray-100 text-xs">v1.0</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <iconify-icon icon="line-md:account" class="dark:text-gray-300 text-gray-500"></iconify-icon>
+                            <span class="text-gray-900 dark:text-gray-100 text-xs">5 Kullanıcı</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+        <div class="col-span-2 md:col-span-1 lg:col-span-4 flex">
+        <a class="flex-1" href="{% url 'toplanti_home' %}">
+            <div class="card group cursor-pointer hover:shadow-sm transition-shadow h-full">
+                <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-500 h-full">
+                    <div class="flex justify-center p-2.5 bg-gray-50 dark:bg-gray-800">
+                        <span class="text-sm font-semibold group-hover:text-blue-500">
+                           İcra Toplantı Kurulu Yönetimi
+                        </span>
+                    </div>
+
+                    <div class="flex flex-1 p-2.5">
+                        <span class="text-sm font-normal">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Maxime accusantium, expedita quibusdam eligendi aperiam officia suscipit ad reprehenderit repellat id.
+                            Sunt ipsam repellendus quibusdam.
+                        </span>
+                    </div>
+
+                    <div class="mt-auto flex justify-between items-center p-2.5 bg-gray-100 dark:bg-gray-700">
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <iconify-icon icon="fa:code-fork" class="dark:text-gray-300 text-gray-500"></iconify-icon>
+                            <span class="text-gray-900 dark:text-gray-100 text-xs">v1.0</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-1.5 font-bold">
+                            <iconify-icon icon="line-md:account" class="dark:text-gray-300 text-gray-500"></iconify-icon>
+                            <span class="text-gray-900 dark:text-gray-100 text-xs">5 Kullanıcı</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ToplantiConfig(AppConfig):
+class AppProductConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'toplanti'
+    name = 'app_product'

@@ -16,7 +16,6 @@ urlpatterns = [
     path('olustur/', MeetingCreateView.as_view(), name='meeting_create'),
     path('aktif/', MeetingActiveView.as_view(), name='meeting_active'),
     path('tamamlanan/', MeetingCompletedView.as_view(), name='meeting_completed'),
-    
     # Görev
     path('gorevler/', TasksView.as_view(), name='tasks'),
     path('gorevler/olustur/', TaskCreateView.as_view(), name='tasks_create'),
