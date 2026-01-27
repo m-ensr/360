@@ -67,7 +67,7 @@ class ProductDetailKampanyaView(TemplateView):
 
 
 class ProductDetailHareketView(TemplateView):
-    template_name = 'product/product_detail_movement.html'
+    template_name = 'product/product_detail_logs.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
