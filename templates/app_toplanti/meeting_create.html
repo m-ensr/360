@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block sidebar %}
-{% include 'parts/sidebar.html' with sidebar_links_template='toplanti/parts/sidebar_toplanti.html' app_name='toplanti' app_title='Toplantı Yönetimi' %}
+{% include 'parts/sidebar.html' with sidebar_links_template='app_toplanti/parts/sidebar_toplanti.html' app_name='toplanti' app_title='Toplantı Yönetimi' %}
 {% endblock sidebar %}
 
 {% block content %}
@@ -54,7 +54,7 @@
 
                 <div class="eo-form-body pb-3.5">
                     <div class="col-span-1 lg:col-span-12">
-                        <label for="" class="eo-form-label">Toplantı Tarihi<span class="text-danger text-base font-semibold">*</span></label>
+                        <label for="" class="eo-form-label">Toplantı Tarihi<span class="asterisk">*</span></label>
                         <div class="mt-1.5">
                             <input type="date" name="" id="" class="eo-form-input" required />
                         </div>
@@ -62,7 +62,7 @@
 
                     <div class="col-span-1 lg:col-span-12">
                         <div class="flex flex-col flex-1">
-                            <label for="" class="eo-form-label mb-1.5">Toplantı Başlığı / Gündem<span class="text-danger text-base font-semibold">*</span></label>
+                            <label for="" class="eo-form-label mb-1.5">Toplantı Başlığı / Gündem<span class="asterisk">*</span></label>
                             <textarea name="" id="" rows="3" placeholder="Toplantı başlığı ve gündem giriniz..." class="flex-1 eo-form-input resize-none" required></textarea>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                 <div class="eo-form-body pb-3.5">
                     <div class="col-span-1 lg:col-span-12">
                         <div class="flex flex-col flex-1">
-                            <label for="" class="eo-form-label mb-1.5">Toplantı Notları<span class="text-danger text-base font-semibold">*</span></label>
+                            <label for="" class="eo-form-label mb-1.5">Toplantı Notları<span class="asterisk">*</span></label>
                             <textarea name="" id="" rows="5" placeholder="Toplantı notlarını giriniz..." class="flex-1 eo-form-input resize-none" required></textarea>
                         </div>
                     </div>
