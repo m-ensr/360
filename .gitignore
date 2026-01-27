@@ -1,0 +1,11 @@
+# .gitignore
+# Sanal ortam ve diğer gizli dosyalar
+sanal/
+db.sqlite3
+.env
+__pycache__/
+*.pyc
+.DS_Store
+assets/fonts/inter/extras/
+assets/fonts/inter/web/
+
