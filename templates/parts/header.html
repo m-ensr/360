@@ -22,12 +22,18 @@
             <!-- *Uygulama Seçme İşi -->
             <div class="relative">
                 <button id="app_selector_buton" class="flex items-center gap-2 px-2 -ms-2 py-1.5 text-sm font-medium cursor-pointer text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 rounded-md transition-colors">
-                    <img alt="Logo" class="dark:hidden h-6 w-auto" src="{% static 'images/logo/fakir.png' %}"/>
-                    <img alt="Logo" class="hidden dark:inline-block h-6 w-auto" src="{% static 'images/logo/fakir-dark.png' %}"/>
-                    {% if app_name == 'product' %}
-                        <span class="font-semibold ml-1 font-logo">Ürün Süreç Yönetimi</span>
+                    {% if app_name == 'product' or app_name == 'toplanti' %}
+                        <img alt="Logo" class="dark:hidden h-6 w-auto" src="{% static 'images/logo/fakir.png' %}"/>
+                        <img alt="Logo" class="hidden dark:inline-block h-6 w-auto" src="{% static 'images/logo/fakir-dark.png' %}"/>
+                        {% if app_name == 'product' %}
+                            <span class="font-semibold ml-1 font-logo">Ürün Süreç Yönetimi</span>
+                        {% else %}
+                            <span class="font-semibold ml-1 font-logo">İcra Toplantı Kurulu</span>
+                        {% endif %}
                     {% else %}
-                        <span class="font-semibold ml-1 font-logo">İcra Toplantı Kurulu</span>
+                        <img alt="Logo" class="dark:hidden h-6 w-auto" src="{% static 'images/logo/holding.png' %}"/>
+                        <img alt="Logo" class="hidden dark:inline-block h-6 w-auto" src="{% static 'images/logo/holding.png' %}"/>
+                        <span class="font-semibold ml-1 font-logo">Saruhan 360</span>
                     {% endif %}
                     <iconify-icon icon="line-md:chevron-small-down" class="text-base"></iconify-icon>
                 </button>
@@ -90,6 +96,18 @@
                         <a href="{% url 'home' %}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
                             <iconify-icon icon="line-md:person" class="text-base"></iconify-icon>
                             <span>Profil</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <div class="my-1 border-t border-gray-200 dark:border-gray-800"></div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'elemento' %}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-black via-yellow-800 to-yellow-400 transition-colors duration-500 ease-in-out hover:from-yellow-900 hover:via-yellow-600 hover:to-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">
+                            <iconify-icon icon="line-md:coffee-filled-loop" class="text-base"></iconify-icon>
+                            <span>Elemento</span>
                         </a>
                     </li>
 
