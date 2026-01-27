@@ -33,7 +33,7 @@ node_modules/
 package-lock.json
 migrations/
 .ipynb_checkpoints/
-
+output.css
 # Kişisel rehber dosyası
 guide.md
 
