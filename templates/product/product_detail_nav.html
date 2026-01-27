@@ -1,0 +1,30 @@
+<!-- product_detail_nav.html -->
+<div class="border border-gray-200 dark:border-white/25 rounded-lg eo-card-header-tabs">
+    <a href="{% url 'product_detail_genel' %}" class="group relative eo-card-header-tab{% if active_tab == 'genel' %} eo-card-header-tab-active{% endif %}">
+        <span>Genel</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'genel' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+    <a href="{% url 'product_detail_notlar' %}" class="group relative eo-card-header-tab{% if active_tab == 'notlar' %} eo-card-header-tab-active{% endif %}">
+        <span>Notlar</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'notlar' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+    <a href="{% url 'product_detail_smm' %}" class="group relative eo-card-header-tab{% if active_tab == 'smm' %} eo-card-header-tab-active{% endif %}">
+        <span>SMM</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'smm' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+    <a href="{% url 'product_detail_kalite' %}" class="group relative eo-card-header-tab{% if active_tab == 'kalite' %} eo-card-header-tab-active{% endif %}">
+        <span>Kalite</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'kalite' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+    <a href="{% url 'product_detail_kampanya' %}" class="group relative eo-card-header-tab{% if active_tab == 'kampanya' %} eo-card-header-tab-active{% endif %}">
+        <span>Kampanya</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'kampanya' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+    <a href="{% url 'product_detail_hareket' %}" class="group relative eo-card-header-tab{% if active_tab == 'hareket' %} eo-card-header-tab-active{% endif %}">
+        <span>Hareket</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-0.5{% if active_tab == 'hareket' %} bg-blue-500 dark:bg-blue-400{% else %} bg-transparent{% endif %}"></span>
+    </a>
+</div>
+
+
+
