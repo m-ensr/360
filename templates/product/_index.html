@@ -1,0 +1,84 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% include 'parts/sidebar.html' with sidebar_links_template='product/parts/sidebar_product.html' app_name='product' app_title='Ürün Süreç Yönetimi' %}
+{% endblock sidebar %}
+
+{% block content %}
+
+
+<div class="grid grid-cols-1 lg:grid-cols-1 gap-3.5">
+    <div class="card">
+        <div class="card-header flex items-center justify-between">
+                <div class="card-title">
+                    Varolan tüm ürünler aşağıdaki tabloda listeleniyor.
+                </div>
+
+                <a href="{% url 'product_home' %}" class="eo-btn-operation">
+                    <iconify-icon class="text-base" icon="line-md:plus-circle-filled"></iconify-icon>
+                    Ürün Ekle
+                </a>
+            </div>
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="flow-root">
+                <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 align-middle">
+                        <table class="eo-table">
+                            <thead class="bg-gray-50 dark:bg-transparent">
+                                <tr class="eo-tablehead">
+                                    <th scope="col" class="p-2.5">
+                                        Ürün
+                                    </th>
+                                    <th scope="col" class="px-2 py-2.5">SMM</th>
+                                    <th scope="col" class="px-2 py-2.5">Numune</th>
+                                    <th scope="col" class="px-2 py-2.5 hidden lg:table-cell">Durum</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="eo-tablebody">
+                                <tr class="eo-tableline" onclick="window.location.href='{% url 'product_detail_genel' %}'"> 
+                                    <td class="eo-table-element-first">
+                                         <a href="{% url 'product_detail_genel' %}" class="flex items-center gap-x-4 group cursor-pointer">
+                                            <img src="{% static 'images/urun_foto1.png' %}" class="size-12 rounded-lg border border-gray-300 bg-gray-100 dark:bg-gray-700 dark:border-gray-500" />
+                                            <div class="flex flex-col gap-0.5">
+                                                <div class="text-xs sm:text-sm tracking-tight font-medium">TEST - TSS 3032 Toz Torbasız Elek. Süp.</div>
+                                                <div class="text-xs text-gray-600 dark:text-gray-400">Toz Torbasız Elektrik Süpürgesi</div>
+                                            </div>
+                                        </a>
+                                    </td>
+                                    
+                                    <!-- SMM -->
+                                    <td class="eo-table-element whitespace-nowrap">
+                                        <div class="flex flex-col gap-0.5">
+                                            <div class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400">Tamamlandı</div>
+                                            <div class="text-xs text-gray-600 dark:text-gray-400">14.10.2024</div>
+                                        </div>
+                                    </td>
+
+                                    <!-- Numune -->
+                                    <td class="eo-table-element whitespace-nowrap">
+                                        <div class="flex flex-col gap-0.5">
+                                            <div class="text-xs sm:text-sm font-semibold text-sky-600 dark:text-sky-400">Teslim Edildi</div>
+                                            <div class="text-xs text-gray-600 dark:text-gray-400">14.10.2024</div>
+                                        </div>
+                                    </td>
+
+                                    <!-- Durum -->
+                                    <td class="eo-table-element-lg">
+                                        <span class="eo-badge-warning">
+                                            <span class="eo-badge-dot-warning"></span>
+                                            Devam Ediyor
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

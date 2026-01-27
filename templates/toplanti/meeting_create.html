@@ -1,0 +1,119 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% include 'parts/sidebar.html' with sidebar_links_template='toplanti/parts/sidebar_toplanti.html' app_name='toplanti' app_title='Toplantı Yönetimi' %}
+{% endblock sidebar %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    
+    {% csrf_token %}
+    
+    <div class="grid grid-cols-1 lg:grid-cols-6 gap-3.5">
+        <!-- SOL TARAF -->
+        <div class=" grid-cols-1 lg:col-span-2 flex flex-col gap-3.5">
+            <!-- !Katılımcılar -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Katılımcılar</div>
+                </div>
+
+                <div class="divide-y divide-gray">
+                    {% for i in "xxxxx" %}
+                        <div class="flex items-center gap-2.5 px-2.5 py-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="group grid size-4 grid-cols-1 shrink-0">
+                                <input id="participant_{{ forloop.counter }}" type="checkbox" name="participants" value="Kullanıcı {{ forloop.counter }}" class="eo-form-checkbox" />
+                                <iconify-icon icon="line-md:confirm" class="eo-form-checkbox-icon"></iconify-icon>
+                            </div>
+                            <label for="participant_{{ forloop.counter }}" class="eo-form-label cursor-pointer flex-1">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="size-8 rounded-lg overflow-hidden shrink-0 border border-gray">
+                                        <img alt="avatar" class="w-full h-full object-cover" src="{% static 'images/avatar/avatar.png' %}"/>
+                                    </div>
+                                    <div class="flex flex-col min-w-0 flex-1 text-content">
+                                        <span class="font-semibold">Katılımcı {{ forloop.counter }}</span>
+                                        <span class="text-xs tracking-tight">Jr. Frontend Engineer</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- SAĞ TARAF -->
+        <div class=" grid-cols-1 lg:col-span-4 flex flex-col gap-3.5">
+            <!-- !Genel Bilgiler -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Genel Bilgiler</div>
+                </div>
+
+                <div class="eo-form-body pb-3.5">
+                    <div class="col-span-1 lg:col-span-12">
+                        <label for="" class="eo-form-label">Toplantı Tarihi<span class="text-danger text-base font-semibold">*</span></label>
+                        <div class="mt-1.5">
+                            <input type="date" name="" id="" class="eo-form-input" required />
+                        </div>
+                    </div>
+
+                    <div class="col-span-1 lg:col-span-12">
+                        <div class="flex flex-col flex-1">
+                            <label for="" class="eo-form-label mb-1.5">Toplantı Başlığı / Gündem<span class="text-danger text-base font-semibold">*</span></label>
+                            <textarea name="" id="" rows="3" placeholder="Toplantı başlığı ve gündem giriniz..." class="flex-1 eo-form-input resize-none" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- !Toplantı Notları -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Toplantı Notları</div>
+                </div>
+
+                <div class="eo-form-body pb-3.5">
+                    <div class="col-span-1 lg:col-span-12">
+                        <div class="flex flex-col flex-1">
+                            <label for="" class="eo-form-label mb-1.5">Toplantı Notları<span class="text-danger text-base font-semibold">*</span></label>
+                            <textarea name="" id="" rows="5" placeholder="Toplantı notlarını giriniz..." class="flex-1 eo-form-input resize-none" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-1 lg:col-span-12">
+                        <div class="flex flex-col flex-1">
+                            <label for="" class="eo-form-label mb-1.5">Ek Açıklamalar</label>
+                            <textarea name="" id="" rows="3" placeholder="Ek açıklamalarınızı giriniz..." class="flex-1 eo-form-input resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- !Dosya & Ekler -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Dosya & Ekler</div>
+                </div>
+
+                <div class="eo-form-body">
+                    <div class="col-span-1 lg:col-span-12">
+                        <label for="" class="eo-form-label">Toplantı Ekleri</label>
+                        <div class="mt-1.5">
+                            <input type="file" name="" id="" class="eo-form-file" multiple />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3.5 flex justify-end gap-2.5">
+                    <a href="{% url 'meeting_active' %}" class="eo-btn eo-btn-danger">İptal</a>
+                    <button type="submit" class="eo-btn eo-btn-primary" eo-loading eo-loading-duration="3">Toplantıyı Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

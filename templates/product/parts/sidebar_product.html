@@ -1,0 +1,40 @@
+<!-- *Sidebar Links -->
+<nav class="space-y-0.5">
+    <a href="{% url 'product_home' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'product_home' %} data-status="active"{% endif %}>
+        <iconify-icon icon="line-md:home-md" class="text-base"></iconify-icon>
+        <span>Anasayfa</span>
+    </a>
+
+    <div class="pt-2.5">
+        <div class="px-2 pb-1.5 text-xs font-bold text-gray-900 dark:text-gray-50">
+            Ürün Yönetimi İşlemleri
+        </div>
+
+        <a href="{% url 'product_add_new' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'product_add_new' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:plus-circle" class="text-base"></iconify-icon>
+            <span>Yeni Ürün Ekle</span>
+        </a>
+
+        <a href="{% url 'product_kategori' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'product_kategori' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:list-3" class="text-base"></iconify-icon>
+            <span>Kategori Yönetimi</span>
+        </a>
+
+        <a href="{% url 'product_suppliers' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'product_suppliers' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:account-small" class="text-base"></iconify-icon>
+            <span>Tedarikçiler</span>
+        </a>
+    </div>
+
+    <div class="pt-2.5">
+        <div class="px-2 pb-1.5 text-xs font-bold text-gray-900 dark:text-gray-50">
+            SMM İşlemleri
+        </div>
+
+        <a href="{% url 'smm_expenses' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'smm_expenses' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:clipboard-list" class="text-base"></iconify-icon>
+            <span>Yıllık Masraflar</span>
+        </a>
+    </div>
+</nav>
+

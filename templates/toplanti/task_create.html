@@ -1,0 +1,77 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% include 'parts/sidebar.html' with sidebar_links_template='toplanti/parts/sidebar_toplanti.html' app_name='toplanti' app_title='Toplantı Yönetimi' %}
+{% endblock sidebar %}
+
+{% block content %}
+
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="flex flex-col gap-3.5">
+
+
+                    <!-- !Karar Girişi -->
+                    <div class="card">
+                        <div class="card-header flex justify-between items-center px-2.5">
+                        <h3 class="card-title">Karar Girişi</h3>
+
+                        <a href="{% url 'meeting_detail' pk=1 %}" class="eo-btn-operation-return">
+                            <iconify-icon icon="line-md:chevron-small-left" class="text-base"></iconify-icon>
+                            Geri Dön
+                        </a>
+
+                        </div>
+
+                        <div class="eo-form-body pb-3.5">
+                            <!-- Karar -->
+                            <div class="col-span-1 lg:col-span-12">
+                                <div class="flex flex-col flex-1">
+                                    <label for="" class="eo-form-label mb-1.5">Karar</label>
+                                    <textarea name="" id="" rows="4" placeholder="Kararı giriniz..." class="flex-1 eo-form-input resize-none"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- İlgili Personel -->
+                            <div class="col-span-1 lg:col-span-6">
+                                <label for="" class="eo-form-label">İlgili Personel</label>
+                                <div class="mt-1.5 grid grid-cols-1">
+                                    <select name="" id="" class="col-start-1 row-start-1 w-full eo-form-selection">
+                                        <option value="">Seçiniz</option>
+                                        <option value="Ensar Ö.">Ensar Özdemir</option>
+                                    </select>
+                                    <iconify-icon data-slot="icon" aria-hidden="true" icon="line-md:chevron-small-down" class="eo-form-select-icon"></iconify-icon>
+                                </div>
+                            </div>
+
+                            <!-- Son Tarih / Deadline -->
+                            <div class="col-span-1 lg:col-span-6">
+                                <label for="" class="eo-form-label">Son Tarih</label>
+                                <div class="mt-1.5">
+                                    <input type="date" name="" id="" class="eo-form-input" />
+                                </div>
+                            </div>
+
+
+                            <!-- Belge -->
+                            <div class="col-span-1 lg:col-span-12">
+                                <label for="" class="eo-form-label">Belge</label>
+                                <div class="mt-1.5">
+                                    <input type="file" name="" id="" class="eo-form-file" />
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="col-span-1 lg:col-span-12">
+                                <div class="flex justify-end gap-3.5">
+                                    <button type="submit" class="eo-btn eo-btn-primary">Kaydet</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+{% endblock content %}

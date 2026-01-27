@@ -1,0 +1,87 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <script src="http://localhost:8000/__reload__/events/" defer></script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-950 min-h-screen">
+    <!-- Arka plan - bg-muted -->
+    <div class="flex flex-col h-screen">
+        <!-- !Header -->
+         {% include 'parts/header.html' %}
+
+        <main class="flex flex-col lg:flex-row grow pt-header-mobile lg:pt-header overflow-hidden">
+            <!-- Sidebar Overlay (Mobil) -->
+            <div id="eoSidebar" class="fixed inset-0 bg-black/50 z-20 lg:hidden hidden transition-opacity"></div>
+            <div class="flex flex-col lg:flex-row flex-1 min-h-0 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 m-2.5 -mt-2.5 overflow-hidden">
+                <!-- !Sidebar -->
+                {% block sidebar %}
+                {% include 'parts/sidebar.html' %}
+                {% endblock sidebar %}
+                <!-- !Muhteva: Başlangıç -->
+                    
+                <div class="flex-1 min-h-0 overflow-y-auto thin-scrollbar rounded-lg p-3.5">
+                    <div class="flex flex-col gap-3.5">
+                        {% block content %}
+                        {% endblock content %}
+
+                    </div>
+                </div>
+                <!-- !Muhteva: Sonu -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const defaultThemeMode = 'light'; // light|dark|system
+        let themeMode;
+
+        if (document.documentElement) {
+            if (localStorage.getItem('theme')) {
+                themeMode = localStorage.getItem('theme');
+            } else if (
+                document.documentElement.hasAttribute('data-theme-mode')
+            ) {
+                themeMode =
+                    document.documentElement.getAttribute('data-theme-mode');
+            } else {
+                themeMode = defaultThemeMode;
+            }
+
+            if (themeMode === 'system') {
+                themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+                    ? 'dark'
+                    : 'light';
+            }
+
+            document.documentElement.classList.add(themeMode);
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle?.addEventListener('click', () => {
+            const html = document.documentElement;
+            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.classList.remove('dark', 'light');
+            html.classList.add(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="module" src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+</body>
+</html>

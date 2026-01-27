@@ -1,0 +1,35 @@
+<!-- *Sidebar Links -->
+<nav class="space-y-0.5">
+
+    <a href="{% url 'toplanti_home' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'toplanti_home' %} data-status="active"{% endif %}>
+        <iconify-icon icon="line-md:home-md" class="text-base"></iconify-icon>
+        <span>Anasayfa</span>
+    </a>
+
+    <div class="pt-2.5">
+        <div class="px-2 pb-1.5 text-xs font-bold text-gray-900 dark:text-gray-50">
+            Toplantı Yönetimi
+        </div>
+
+        <a href="{% url 'meeting_create' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'meeting_create' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:plus-circle" class="text-base"></iconify-icon>
+            <span>Yeni Toplantı</span>
+        </a>
+    </div>
+
+    <div class="pt-2.5">
+        <div class="px-2 pb-1.5 text-xs font-bold text-gray-900 dark:text-gray-50">
+            Karar Takibi
+        </div>
+
+        <a href="{% url 'tasks' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'tasks' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:clipboard-list" class="text-base"></iconify-icon>
+            <span>Kararlar</span>
+        </a>
+
+        <a href="{% url 'task_completed' %}" class="sidebar-link"{% if request.resolver_match.url_name == 'task_completed' %} data-status="active"{% endif %}>
+            <iconify-icon icon="line-md:confirm-circle" class="text-base"></iconify-icon>
+            <span>Tamamlanan Kararlar</span>
+        </a>
+    </div>
+</nav>

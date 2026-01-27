@@ -1,0 +1,53 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% include 'parts/sidebar.html' with sidebar_links_template='toplanti/parts/sidebar_toplanti.html' app_name='toplanti' app_title='Toplantı Yönetimi' %}
+{% endblock sidebar %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Tamamlanan Kararlar
+        </div>
+    </div>
+    <ul role="list" class="divide-y divide-gray">
+        <li class="relative flex justify-between gap-x-2.5 px-2.5 py-1.5 hover:bg-gray-50 dark:hover:bg-white/2.5">
+            <div class="flex min-w-0 gap-x-2.5">
+                <div class="min-w-0 flex-auto">
+                    <p class="text-title tracking-tight">
+                        <a href="{% url 'meeting_detail' pk=1 %}">
+                            <span class="absolute inset-x-0 -top-px bottom-0"></span>
+                            E-posta listesi hazırlama karari kapsamında müşteri veri tabanından aktif kullanıcıların e-posta adreslerinin çıkarılması ve düzenlenmesi gerekmektedir.
+                        </a>
+                    </p>
+                    <div class="mt-1 flex text-xs/5 text-muted">
+                        <div>11.01.2026 Tarihli Toplantı</div>
+                        <span class="mx-1.5">·</span>
+                        <div class="font-semibold">Mustafa Ensar Özdemir</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex shrink-0 items-center gap-x-2.5">
+                <div class="hidden sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm text-primary font-semibold">Detay</p>
+                    <div class="mt-1 flex items-center gap-x-1.5">
+
+                        <p class="text-xs text-success font-medium">Tamamlanma Tarihi:</p>
+                        <div class="eo-dot-bg-success">
+                            <div class="eo-badge-dot-success"></div>
+                        </div>
+                    <p class="text-xs text-muted font-bold">12.01.2026</p>
+                    </div>
+                </div>
+
+                <iconify-icon icon="line-md:chevron-small-right" class="size-5 flex-none text-primary"></iconify-icon>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock content %}
