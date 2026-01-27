@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_browser_reload',
-    'toplanti',
-    'product',
+    'app_toplanti',
+    'app_product',
 ]
 
 MIDDLEWARE = [

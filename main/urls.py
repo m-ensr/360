@@ -29,8 +29,8 @@ urlpatterns = [
     path('elemento/', ElementoView.as_view(), name='elemento'),
     
     # Toplantı
-    path('toplanti/', include('toplanti.urls')),
+    path('toplanti/', include('app_toplanti.urls')),
     
     # Product / Ürün Süreç Yönetimi
-    path('urun/', include('product.urls')),
+    path('urun/', include('app_product.urls')),
 ]
