@@ -1,0 +1,244 @@
+{% extends 'parts/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+{% include 'parts/sidebar.html' with sidebar_links_template='product/parts/sidebar_product.html' app_name='product' app_title='Ürün Süreç Yönetimi' %}
+{% endblock sidebar %}
+
+{% block content %}
+
+<form method="post">
+    <div class="flex flex-col gap-3.5">
+            <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Ürün Bilgileri
+                </div>
+            </div>
+
+            <div class="eo-form-body pb-3.5">
+                <!-- +Marka -->
+                <div class="col-span-1 lg:col-span-3">
+                    <label for="" class="eo-form-label">Marka<span class="asterisk">*</span></label>
+                    <div class="mt-1.5 grid grid-cols-1">
+                        <select name="" class="col-start-1 row-start-1 w-full eo-form-selection">
+                            <option selected disabled>Seçiniz</option>
+                            <option>Fakir</option>
+                            <option>Range</option>
+                            <option>İYO</option>
+                        </select>
+                        <iconify-icon data-slot="icon" aria-hidden="true" icon="line-md:chevron-small-down" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 dark:text-gray-300 sm:size-4"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- +Ürün Adı -->
+                <div class="col-span-1 lg:col-span-9">
+                    <label for="" class="eo-form-label">Ürün Adı</label>
+                    <div class="mt-1.5">
+                        <input required type="text" placeholder="Ürün Adı" name="" class="eo-form-input" />
+                    </div>
+                </div>
+
+
+                <!-- +Ana Kategori -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">Ana Kategori</label>
+                    <div class="mt-1.5 grid grid-cols-1">
+                        <select name="" class="col-start-1 row-start-1 w-full eo-form-selection">
+                            <option selected disabled>Seçiniz</option>
+                            <option>Seçenek 1</option>
+                            <option>Seçenek 2</option>
+                        </select>
+                        <iconify-icon data-slot="icon" aria-hidden="true" icon="line-md:chevron-small-down" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 dark:text-gray-300 sm:size-4"></iconify-icon>
+                    </div>
+                </div>
+                
+                <!-- +Alt Kategori -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">Alt Kategori</label>
+                    <div class="mt-1.5 grid grid-cols-1">
+                        <select name="" class="col-start-1 row-start-1 w-full eo-form-selection">
+                            <option selected disabled>Seçiniz</option>
+                            <option>Seçenek 1</option>
+                            <option>Seçenek 2</option>
+                        </select>
+                        <iconify-icon data-slot="icon" aria-hidden="true" icon="line-md:chevron-small-down" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 dark:text-gray-300 sm:size-4"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- +Ürün Görselleri -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">Ürün Görselleri</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- +Tedarikçi -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">Tedarikçi</label>
+                    <div class="mt-1.5 grid grid-cols-1">
+                        <select name="" class="col-start-1 row-start-1 w-full eo-form-selection">
+                            <option selected disabled>Seçiniz</option>
+                            <option>Seçenek 1</option>
+                            <option>Seçenek 2</option>
+                        </select>
+                        <iconify-icon data-slot="icon" aria-hidden="true" icon="line-md:chevron-small-down" class="pointer-events-ne col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 dark:text-gray-300 sm:size-4"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- +Ürün Kodu -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">SAP Kodu</label>
+                    <div class="mt-1.5">
+                        <input type="text" placeholder="Ürün Kodu" name="" class="eo-form-input" />
+                    </div>
+                </div>
+
+                <!-- +Katalog Kodu -->
+                <div class="col-span-1 lg:col-span-4">
+                    <label for="" class="eo-form-label">Katalog Kodu</label>
+                    <div class="mt-1.5">
+                        <input type="text" placeholder="Katalog Kodu" name="" class="eo-form-input" />
+                    </div>
+                </div>
+
+                <!-- +Açıklama -->
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="flex flex-col flex-1">
+                        <label for="" class="eo-form-label mb-1.5">Açıklama</label>
+                        <textarea name="" placeholder="Ürün ile ilgili açıklama" class="flex-1 eo-form-input resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- +Ürün Değerlendirmesi -->
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="flex flex-col flex-1">
+                        <label for="" class="eo-form-label mb-1.5">Ürün Değerlendirmesi</label>
+                        <textarea name="" placeholder="Ürüne dair değerlendirme" class="flex-1 eo-form-input resize-none"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Ürün Dökümanları
+                </div>
+            </div>
+            
+            <div class="eo-form-body lg:grid-cols-10 pb-3.5">
+                <!-- +Kullanım Kılavuzu -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">Kullanım Kılavuzu</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>    
+                
+                <!-- +EMC -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">EMC</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +LVD -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">LVD</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +CE -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">CE</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +Co Licence -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">Co Licence</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +RoHS -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">RoHS</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +CB -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">CB</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +LFBG -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">LFBG</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +Kotasyon -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">Kotasyon</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- +Katalog -->
+                <div class="col-span-1 lg:col-span-2">
+                    <label for="" class="eo-form-label">Katalog</label>
+                    <div class="mt-1.5">
+                        <div class="relative">
+                            <input type="file" name="" class="w-full eo-form-file" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end p-3.5 border-t border-gray">
+                <button type="submit" class="eo-btn eo-btn-primary" eo-loading eo-loading-duration="5">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
