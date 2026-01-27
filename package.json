@@ -6,7 +6,8 @@
   "scripts": {
     "selam": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
     "killer": "lsof -ti:3000,3001,3002,3003,3004,4200,5000,5173,8000,8001,8002,8003,8007,8080,8888,9000 | xargs kill -9 2>/dev/null || true",
-    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css"
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css",
+    "clean": "npm cache clean --force"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
