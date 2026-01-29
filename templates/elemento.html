@@ -6,73 +6,348 @@
 
 {% block content %}
 
-<div class="grid grid-cols-2 lg:grid-cols-12 gap-3.5 items-stretch">
-    <div class="col-span-2 md:col-span-1 lg:col-span-4 flex">
-        <a class="flex-1" href="{% url 'product_home' %}">
-            <div class="card group cursor-pointer hover:shadow-sm transition-shadow h-full">
-                <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-500 h-full">
-                    <div class="flex justify-center p-2.5 bg-gray-50 dark:bg-gray-800">
-                        <span class="text-sm font-semibold group-hover:text-blue-500">
-                            Ürün ve Kampanya Yönetimi
-                        </span>
-                    </div>
-
-                    <div class="flex flex-1 p-2.5">
-                        <span class="text-sm font-normal">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Aut debitis, harum sapiente, ut aliquam molestiae.
-                        </span>
-                    </div>
-
-                    <div class="mt-auto flex justify-between items-center p-2.5 bg-gray-100 dark:bg-gray-700">
-                        <div class="flex items-center gap-1.5 font-bold">
-                            <iconify-icon icon="fa:code-fork" class="dark:text-gray-300 text-gray-500"></iconify-icon>
-                            <span class="text-gray-900 dark:text-gray-100 text-xs">v1.0</span>
-                        </div>
-                        
-                        <div class="flex items-center gap-1.5 font-bold">
-                            <iconify-icon icon="line-md:account" class="dark:text-gray-300 text-gray-500"></iconify-icon>
-                            <span class="text-gray-900 dark:text-gray-100 text-xs">5 Kullanıcı</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
+<div class="card">
+    <div class="border-b border-gray px-3.5">
+        <div class="-mb-px flex gap-x-8">
+            <div eo-tab-href="butonlar" class="eo-tab active">butonlar</div>
+            <div eo-tab-href="badges" class="eo-tab">badges</div>
+            <div eo-tab-href="alerts" class="eo-tab">alerts</div>
+            <div eo-tab-href="states" class="eo-tab">states</div>
+        </div>
     </div>
 
-        <div class="col-span-2 md:col-span-1 lg:col-span-4 flex">
-        <a class="flex-1" href="{% url 'toplanti_home' %}">
-            <div class="card group cursor-pointer hover:shadow-sm transition-shadow h-full">
-                <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-500 h-full">
-                    <div class="flex justify-center p-2.5 bg-gray-50 dark:bg-gray-800">
-                        <span class="text-sm font-semibold group-hover:text-blue-500">
-                           İcra Toplantı Kurulu Yönetimi
-                        </span>
-                    </div>
+    <div eo-tab-content="butonlar" class="p-0">
+        <div class="grid grid-cols-3 divide-x divide-gray">
+            <div class="flex flex-col divide-y">
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-primary">primary</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
 
-                    <div class="flex flex-1 p-2.5">
-                        <span class="text-sm font-normal">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Maxime accusantium, expedita quibusdam eligendi aperiam officia suscipit ad reprehenderit repellat id.
-                            Sunt ipsam repellendus quibusdam.
-                        </span>
-                    </div>
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-success">success</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
 
-                    <div class="mt-auto flex justify-between items-center p-2.5 bg-gray-100 dark:bg-gray-700">
-                        <div class="flex items-center gap-1.5 font-bold">
-                            <iconify-icon icon="fa:code-fork" class="dark:text-gray-300 text-gray-500"></iconify-icon>
-                            <span class="text-gray-900 dark:text-gray-100 text-xs">v1.0</span>
-                        </div>
-                        
-                        <div class="flex items-center gap-1.5 font-bold">
-                            <iconify-icon icon="line-md:account" class="dark:text-gray-300 text-gray-500"></iconify-icon>
-                            <span class="text-gray-900 dark:text-gray-100 text-xs">5 Kullanıcı</span>
-                        </div>
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-danger">danger</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-warning">warning</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-info">info</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-dark">dark</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col divide-y">
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-primary">primary</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-success">success</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-danger">danger</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-warning">warning</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-info">info</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-soft-dark">dark</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+            </div>
+
+            <div class="flex flex-col divide-y">
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-primary">primary</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-success">success</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-danger">danger</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-warning">warning</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-info">info</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5">
+                    <button class="eo-btn eo-btn-border-dark">dark</button>
+                    <button type="button" class="eo-btn eo-btn-border-light" onclick="copyToClipboard(this.previousElementSibling.outerHTML, this)"><iconify-icon icon="line-md:clipboard-list" class="text-lg font-bold"></iconify-icon></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div eo-tab-content="badges" class="p-0">
+        <div class="divide-y divide-gray">
+            
+            <div class="flex items-center gap-2.5 flex-wrap p-3.5">
+
+                <div class="eo-badge-danger-sm">
+                    <span class="eo-badge-dot-danger"></span>
+                    danger
+                </div>
+
+                <div class="eo-badge-warning-sm">
+                    <span class="eo-badge-dot-warning"></span>
+                    warning
+                </div>
+
+                <div class="eo-badge-primary-sm">
+                    <span class="eo-badge-dot-primary"></span>
+                    primary
+                </div>
+
+                <div class="eo-badge-success-sm">
+                    <span class="eo-badge-dot-success"></span>
+                    success
+                </div>
+
+                <div class="eo-badge-dark-sm">
+                    <span class="eo-badge-dot-dark"></span>
+                    dark
+                </div>
+                
+                <div class="eo-badge-light-sm">
+                    <span class="eo-badge-dot-light"></span>
+                    light
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2.5 flex-wrap p-3.5">
+                <div class="eo-badge-danger">
+                    <span class="eo-badge-dot-danger"></span>
+                    danger
+                </div>
+
+                <div class="eo-badge-primary">
+                    <span class="eo-badge-dot-primary"></span>
+                    primary
+                </div>
+
+                <div class="eo-badge-success">
+                    <span class="eo-badge-dot-success"></span>
+                    success
+                </div>
+
+                <div class="eo-badge-warning">
+                    <span class="eo-badge-dot-warning"></span>
+                    warning
+                </div>
+
+                <div class="eo-badge-dark">
+                    <span class="eo-badge-dot-dark"></span>
+                    dark
+                </div>
+                <div class="eo-badge-light">
+                    <span class="eo-badge-dot-light"></span>
+                    light
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div eo-tab-content="alerts" class="card-body flex flex-col gap-3.5">
+
+        <div class="eo-alert-success">
+            <div class="eo-alert-success-inner">
+                <iconify-icon icon="line-md:check-all" class="eo-alert-success-icon"></iconify-icon>
+                <div class="ml-3.5">
+                    <p class="eo-alert-success-title"><strong class="mr-1">Başarılı!</strong>İşleminize devam edebilirsiniz.</p>
+                </div>
+                <div class="ml-auto pl-3.5">
+                    <div class="-mx-1.5 -my-1.5">
+                        <button type="button" class="eo-alert-success-close" onclick="this.closest('.eo-alert-success').remove()">
+                            <iconify-icon icon="line-md:close" class="eo-alert-success-icon"></iconify-icon>
+                        </button>
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
+
+        <div class="eo-alert-danger">
+            <div class="eo-alert-danger-inner">
+                <iconify-icon icon="line-md:alert-circle-loop" class="eo-alert-danger-icon"></iconify-icon>
+                <div class="ml-3.5">
+                    <p class="eo-alert-danger-title"><strong class="mr-1">Uyarı!</strong>Hatalı giriş.</p>
+                </div>
+                <div class="ml-auto pl-3.5">
+                    <div class="-mx-1.5 -my-1.5">
+                        <button type="button" class="eo-alert-danger-close" onclick="this.closest('.eo-alert-danger').remove()">
+                            <iconify-icon icon="line-md:close" class="eo-alert-danger-icon"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="eo-alert-warning">
+            <div class="eo-alert-warning-inner">
+                <iconify-icon icon="line-md:bell-alert-filled-loop" class="eo-alert-warning-icon"></iconify-icon>
+                <div class="ml-3.5">
+                    <p class="eo-alert-warning-title"><strong class="mr-1">Dikkat!</strong>
+                        <div class="mt-1.5 text-sm text-amber-700 dark:text-amber-200/80">
+                            <ul role="list" class="list-disc space-y-1 pl-5">
+                                <li>Yeni şifreniz son 3 şifrenizden farklı olmalıdır.</li>
+                                <li>Şifreniz isminiz gibi kişisel bilgilerinizi içermemelidir.</li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+                <div class="ml-auto pl-3.5">
+                    <div class="-mx-1.5 -my-1.5">
+                        <button type="button" class="eo-alert-warning-close" onclick="this.closest('.eo-alert-warning').remove()">
+                            <iconify-icon icon="line-md:close" class="eo-alert-warning-icon"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="eo-alert-primary">
+            <div class="eo-alert-primary-inner">
+                <iconify-icon icon="line-md:watch-loop" class="eo-alert-primary-icon"></iconify-icon>
+                <div class="ml-3.5">
+                    <p class="eo-alert-primary-title"><strong class="mr-1">SELAM!</strong>Sadece primarysi de olsun diye yapıldım. Varoluşum diğerleri gibi gerekçelere dayandırılmadığı için anlamsal krizler yaşıyorum.</p>
+                </div>
+                <div class="ml-auto pl-3.5">
+                    <div class="-mx-1.5 -my-1.5">
+                        <button type="button" class="eo-alert-primary-close" onclick="this.closest('.eo-alert-primary').remove()">
+                            <iconify-icon icon="line-md:close" class="eo-alert-primary-icon"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div eo-tab-content="states" class="card-body">
+        <div class="grid grid-cols-5 gap-3.5">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        eo-card-state-primary
+                    </div>
+                </div>
+
+                <div class="eo-card-state-primary">
+                    Metin
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        eo-card-state-danger
+                    </div>
+                </div>
+
+                <div class="eo-card-state-danger">
+                    <iconify-icon icon="line-md:cancel" class="text-xl"></iconify-icon>
+                    Metin
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        eo-card-state-success
+                    </div>
+                </div>
+
+                <div class="eo-card-state-success">
+                    Metin
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        eo-card-state-warning
+                    </div>
+                </div>
+
+                <div class="eo-card-state-warning">
+                    Metin
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        eo-card-state-info
+                    </div>
+                </div>
+
+                <div class="eo-card-state-info">
+                    Metin
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<script>
+let previousButton = null;
+
+function copyToClipboard(text, buttonElement) {
+    // Eğer önceki button varsa ve farklıysa, eski haline döndür
+    if (previousButton && previousButton !== buttonElement) {
+        previousButton.className = "eo-btn eo-btn-border-light";
+        previousButton.querySelector('iconify-icon').setAttribute('icon', 'line-md:clipboard-list');
+    }
+
+    // Kopyalama işlemi
+    navigator.clipboard.writeText(text).then(function() {
+        // Button'u success yap ve icon'u değiştir
+        buttonElement.className = "eo-btn eo-btn-success";
+        buttonElement.querySelector('iconify-icon').setAttribute('icon', 'line-md:emoji-smile-wink-filled');
+        // Bu button'u previous olarak ayarla
+        previousButton = buttonElement;
+    }, function(err) {
+        console.error('Kopyalama hatası: ', err);
+    });
+}
+</script>
 
 {% endblock content %}
